@@ -1,15 +1,16 @@
 import random
+import time
 
 list = ['s', 'p', 'sicr']
 
-chance = 5
+chance = "yes"
 no_of_chance = 0
 computer_score = 0
 your_score = 0
 
 print("Stone, paper, scissor Game")
 
-while no_of_chance < chance:
+while chance.lower()=="yes" or chance.lower()=="y":
     user_input = input("s for stone \np for paper \nsicr for scissor \n Enter your choice:")
     choice = random.choice(list)
 
@@ -46,7 +47,7 @@ while no_of_chance < chance:
         print(f"your guess {user_input} and computer guess is {choice} \n")
         print(f"computer score : {computer_score} \nyour score : {your_score} \n ")
 
-    no_of_chance = no_of_chance + 1
+    chance = input("Type 'yes' or 'y' to play more.")
 
 print("Game over")
 
@@ -57,3 +58,4 @@ if computer_score < your_score:
     print("you won")
 
 print(f"your score : {your_score} and computer score : {computer_score}")
+time.sleep(5)
